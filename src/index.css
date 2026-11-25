@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Surfaces — Engineering Cobalt light */
+        --background: 240 100% 98.8%; /* #F9F9FF */
+        --foreground: 228 16.7% 11.8%; /* #191B23 */
+
+        --muted: 235 40.7% 94.7%; /* surface-container #ECEDF7 */
+        --muted-foreground: 223 14% 24%; /* stronger secondary text on light */
+
+        --popover: 0 0% 100%; /* surface-container-lowest */
+        --popover-foreground: 228 16.7% 11.8%;
+
+        --border: 228 14% 68%; /* sync with outline-variant */
+        --input: 228 14% 68%;
+
+        --card: 235 73.3% 97.1%; /* surface-container-low #F2F3FD */
+        --card-foreground: 228 16.7% 11.8%;
+
+        --primary: 212 100% 37.3%; /* #0058BE */
+        --primary-foreground: 0 0% 100%;
+        --primary-container: 216 78.3% 51.2%; /* #2170E4 */
+        --on-primary-container: 240 100% 99.4%; /* #FEFCFF */
+
+        --secondary: 220 30.2% 41.4%; /* #495E8A */
+        --secondary-foreground: 0 0% 100%;
+        --secondary-container: 222 100% 85.7%; /* #B6CCFF */
+        --on-secondary-container: 220 34% 38%; /* #405682 */
+
+        --accent: 235 31.6% 92.5%; /* surface-container-high #E6E7F2 */
+        --accent-foreground: 228 16.7% 11.8%;
+
+        --destructive: 0 75.5% 41.6%; /* error #BA1A1A */
+        --destructive-foreground: 0 0% 100%;
+
+        --info: 216 78.3% 51.2%; /* primary-container #2170E4 */
+        --info-foreground: 0 0% 100%;
+
+        --success: 142 69.2% 58%; /* #4ADE80 */
+        --success-foreground: 145 80.4% 10%; /* #052E16 */
+
+        --warning: 43 96.4% 56.3%; /* #FBBF24 */
+        --warning-foreground: 21 91.7% 14.1%; /* #451A03 */
+
+        --error: 0 75.5% 41.6%; /* #BA1A1A */
+        --error-foreground: 0 0% 100%;
+        --error-container: 6 100% 92.2%; /* #FFDAD6 */
+        --on-error-container: 0 73.7% 28.6%; /* #93000A */
+
+        --ring: 212 100% 37.3%;
+
+        /* Surface tiers (Material tonal) */
+        --surface: 240 100% 98.8%;
+        --surface-dim: 235 16.4% 86.9%; /* #D8D9E3 */
+        --surface-bright: 240 100% 98.8%;
+        --surface-container-lowest: 0 0% 100%;
+        --surface-container-low: 235 73.3% 97.1%;
+        --surface-container: 235 40.7% 94.7%;
+        --surface-container-high: 235 31.6% 92.5%;
+        --surface-container-highest: 235 22.4% 90.4%;
+        --on-surface: 228 16.7% 11.8%;
+        --on-surface-variant: 223 14% 24%; /* was #424754 — чуть контрастнее */
+        --outline: 224 9% 40%; /* was ~48% — читаемее бордеры/подписи */
+        --outline-variant: 228 14% 68%; /* was ~80% — менее блеклый */
+
+        /* Chart palette */
+        --chart-cyan: 198 93.2% 59.6%; /* #38BDF8 */
+        --chart-amber: 38 92.1% 50.2%; /* #F59E0B */
+        --chart-emerald: 158 64.4% 51.6%; /* #34D399 */
+        --chart-rose: 351 94.5% 71.4%; /* #FB7185 */
+
+        --radius: 0.5rem; /* 8px DEFAULT */
+    }
+
+    .dark,
+    [data-kb-theme="dark"] {
+        /* Surfaces — Engineering Cobalt dark */
+        --background: 222 23.8% 8.2%; /* #10131A */
+        --foreground: 235 22.4% 90.4%; /* #E1E2EC */
+
+        --muted: 222 14.7% 13.3%; /* surface-container #1D2027 */
+        --muted-foreground: 228 19.6% 80%; /* on-surface-variant #C2C6D6 */
+
+        --popover: 222 14.7% 13.3%; /* surface-container */
+        --popover-foreground: 235 22.4% 90.4%;
+
+        --border: 223 12% 29.4%; /* outline-variant #424754 */
+        --input: 223 12% 29.4%;
+
+        --card: 228 16.7% 11.8%; /* surface-container-low #191B23 */
+        --card-foreground: 235 22.4% 90.4%;
+
+        --primary: 222 100% 83.9%; /* #ADC6FF */
+        --primary-foreground: 214 100% 20.8%; /* #002E6A */
+        --primary-container: 218 100% 65.1%; /* #4D8EFF */
+        --on-primary-container: 214 100% 13.7%; /* #001C46 */
+
+        --secondary: 222 85.7% 83.5%; /* #B1C6F9 */
+        --secondary-foreground: 219 57.5% 22%; /* #182F59 */
+        --secondary-container: 220 40.4% 31.6%; /* #304671 */
+        --on-secondary-container: 222 60% 76.5%; /* #9FB5E7 */
+
+        --accent: 222 11.4% 17.3%; /* surface-container-high #272A31 */
+        --accent-foreground: 235 22.4% 90.4%;
+
+        --destructive: 6 100% 83.5%; /* error #FFB4AB */
+        --destructive-foreground: 357 100% 20.6%; /* on-error #690005 */
+
+        --info: 218 100% 65.1%; /* primary-container #4D8EFF */
+        --info-foreground: 214 100% 20.8%;
+
+        --success: 142 69.2% 58%; /* #4ADE80 */
+        --success-foreground: 145 80.4% 10%;
+
+        --warning: 43 96.4% 56.3%; /* #FBBF24 */
+        --warning-foreground: 21 91.7% 14.1%;
+
+        --error: 6 100% 83.5%; /* #FFB4AB */
+        --error-foreground: 357 100% 20.6%;
+        --error-container: 0 73.7% 28.6%; /* #93000A */
+        --on-error-container: 6 100% 92.2%; /* #FFDAD6 */
+
+        --ring: 222 100% 83.9%;
+
+        /* Surface tiers */
+        --surface: 222 23.8% 8.2%;
+        --surface-dim: 222 23.8% 8.2%;
+        --surface-bright: 224 9.2% 23.3%; /* #363941 */
+        --surface-container-lowest: 222 31.2% 6.3%; /* #0B0E15 */
+        --surface-container-low: 228 16.7% 11.8%; /* #191B23 */
+        --surface-container: 222 14.7% 13.3%; /* #1D2027 */
+        --surface-container-high: 222 11.4% 17.3%; /* #272A31 */
+        --surface-container-highest: 222 9.1% 21.6%; /* #32353C */
+        --on-surface: 235 22.4% 90.4%;
+        --on-surface-variant: 228 19.6% 80%;
+        --outline: 227 9% 58.6%; /* #8C909F */
+        --outline-variant: 223 12% 29.4%;
+
+        /* Chart palette (same hues, theme-ready) */
+        --chart-cyan: 198 93.2% 59.6%;
+        --chart-amber: 38 92.1% 50.2%;
+        --chart-emerald: 158 64.4% 51.6%;
+        --chart-rose: 351 94.5% 71.4%;
+
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: "PT Sans", ui-sans-serif, system-ui, sans-serif;
+        font-feature-settings:
+            "rlig" 1,
+            "calt" 1;
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        @apply px-4;
+    }
+}
+
+/* In-app expanded chart card fills SPA viewport */
+.plot-card.fixed > div:last-child {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+/* Plotly modebar — surface panel chrome */
+.js-plotly-plot {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .modebar {
+    background-color: hsl(var(--surface-container-high) / 0.92) !important;
+    border: 1px solid hsl(var(--outline-variant));
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.js-plotly-plot .modebar-btn path {
+    fill: hsl(var(--on-surface-variant)) !important;
+}
+
+.js-plotly-plot .modebar-btn:hover path {
+    fill: hsl(var(--primary)) !important;
+}
+
+/* Вертикальный скролл внутри открытого аккордеона ГУ/нагрузок.
+   Явный webkit-scrollbar, чтобы полоса была видна и на macOS overlay. */
+.loads-accordion-scroll {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--outline)) hsl(var(--surface-container-high));
+}
+
+.loads-accordion-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+.loads-accordion-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--surface-container-high));
+    border-radius: 5px;
+}
+
+.loads-accordion-scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--outline));
+    border-radius: 5px;
+    border: 2px solid hsl(var(--surface-container-high));
+}
+
+.loads-accordion-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--on-surface-variant));
+}
+
+/* Анимация мигания для полей с ошибками валидации */
+@keyframes flash-red {
+    0%,
+    100% {
+        border-color: hsl(var(--destructive));
+        box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    }
+    50% {
+        border-color: hsl(var(--destructive));
+        box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.5);
+        background-color: rgba(220, 38, 38, 0.05);
+    }
+}
